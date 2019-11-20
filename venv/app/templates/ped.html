@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Ped Registration</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.terminal.label }}<br>
+            {{ form.terminal(size=32) }}
+            {% for error in form.terminal.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.serial.label }}<br>
+            {{ form.serial(size=32) }}
+            {% for error in form.serial.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.model.label }}<br>
+            {{ form.model(size=32) }}
+            {% for error in form.model.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.delivered_to_customer.label }}
+            {{ form.delivered_to_customer(size=32) }}
+            {% for error in form.delivered_to_customer.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.date_delivered.label }}
+            {{ form.date_delivered(size=32) }}
+            {% for error in form.date_delivered.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.returned_to_logistics.label }}
+            {{ form.returned_to_logistics(size=32) }}
+            {% for error in form.returned_to_logistics.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.date_returned.label }}
+            {{ form.date_returned(size=32) }}
+            {% for error in form.date_returned.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
